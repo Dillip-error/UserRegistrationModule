@@ -98,9 +98,11 @@ public class RegistrationController {
 	@PostMapping(value = "/save")
 	public String savedata(@ModelAttribute RegistrationForm form, RedirectAttributes attributes) {
 		logger.debug(METHOD_EXECUTION_STATED);
+		System.out.println("==inside save method==");
 		Boolean isSave = false;
+		attributes.addFlashAttribute("registrationEntity", new RegistrationEntity());
 		try {
-			attributes.addFlashAttribute("registrationEntity", new RegistrationEntity());
+			isSave = service.saveFormData(form);
 			if (isSave) {
 				mailUtils.sendUserAccUnlockMail2(form);
 				attributes.addFlashAttribute("msg", "Registration almost done.Check your email to unlock account");
