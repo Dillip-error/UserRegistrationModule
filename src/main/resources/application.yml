@@ -1,0 +1,54 @@
+server:
+       port: 8084
+       
+
+#connection properties
+spring:
+       datasource:
+                  username: PHNBK_LOCAL
+                  password: abc_123
+                  url: jdbc:oracle:thin:@localhost:1521:xe
+                  driver-class-name: oracle.jdbc.driver.OracleDriver
+                  
+                  
+       mvc:
+         view:
+           prefix: /pages/
+           suffix: .jsp
+          
+
+#jpa properties
+       jpa:
+          # show-sql: true
+           database-platform: org.hibernate.dialect.Oracle10gDialect
+           hibernate:
+                  ddl-auto: update
+                  
+                  
+                  
+
+       mail:
+            host: smtp.gmail.com
+            port: 587
+            username: dillipgit1996@gmail.com
+            password: dillip1996git
+
+## Checks un/pwd valid or not?
+            properties:
+                    mail:
+                        smtp:
+                              auth: true
+                              connectiontimeout: 5000
+                              timeout: 5000
+                              writetimeout: 5000
+   
+## HTTPS required [TLS=Transport Layer Security]
+                              starttls:
+                                  enable: true
+                                  
+logging:  level:
+     root: INFO
+  file: applog.log
+         
+
+
