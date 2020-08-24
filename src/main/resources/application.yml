@@ -31,7 +31,7 @@ spring:
             host: smtp.gmail.com
             port: 587
             username: dillipgit1996@gmail.com
-            password: dillip1996git
+            password: 
 
 ## Checks un/pwd valid or not?
             properties:
@@ -46,9 +46,11 @@ spring:
                               starttls:
                                   enable: true
                                   
-logging:  level:
+logging:
+  level:
      root: INFO
   file: applog.log
-         
+     
+    
 
-
+
